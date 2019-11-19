@@ -112,20 +112,20 @@ public class ClangFormat {
       }
 
       // wait for clang-format exit or killed
-      if (0 == process.waitFor()) {
-        Replacements replacements =
-            Replacements.parse(IOUtils.toInputStream(result.get(), StandardCharsets.UTF_8));
-
-        if (replacements.getReplacements() != null) {
-          // sort replacement desc based on offset
-          replacements.getReplacements().sort(
-              Comparator.comparingInt(Replacement::getOffset).reversed());
-        }
-
-        return replacements;
+      if (process.waitFor() != 0) {
+        throw new IOException(result.get());
       }
 
-      throw new IOException(result.get());
+      Replacements replacements =
+          Replacements.parse(IOUtils.toInputStream(result.get(), StandardCharsets.UTF_8));
+
+      if (replacements.getReplacements() != null) {
+        // sort replacement desc based on offset
+        replacements.getReplacements().sort(
+            Comparator.comparingInt(Replacement::getOffset).reversed());
+      }
+
+      return replacements;
     } catch (ExecutionException | InterruptedException e) {
       throw new IOException(e.getMessage());
     }
