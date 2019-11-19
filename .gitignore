@@ -37,5 +37,4 @@ region/jobs/
 *.iml
 .idea/
 .gradle/
-gradle/
 build/
