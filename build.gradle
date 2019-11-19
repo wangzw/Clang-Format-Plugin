@@ -23,8 +23,14 @@ dependencies {
 intellij {
     version '2019.2.4'
 }
+
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      <ul>
+        <li><b>1.0.0</b> - Initial version based on ClangFormatIJ.</li>
+      </ul>"""
+}
+
+publishPlugin {
+    token = System.getenv("INTELLIJ_PUBLISH_TOKEN")
 }
