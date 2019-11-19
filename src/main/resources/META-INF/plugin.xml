@@ -1,0 +1,57 @@
+<idea-plugin>
+  <id>wang.zhanwei.clangformat</id>
+  <name>ClangFormat</name>
+  <version>1.0.0</version>
+  <vendor email="me@zhanei.wang" url="http://zhanwei.wang">Zhanwei Wang</vendor>
+
+  <description><![CDATA[
+    <p>Runs <code>clang-format</code> on the statement or selection.</p>
+    <br></br>
+    <p><code>clang-format</code> is a versatile and beautiful formatter for C++, proto, Java,
+      JavaScript, and TypeScript.</p>
+    <br></br>
+    <p>This plugin does not contain <code>clang-format</code> itself, you must install it separately.
+      <code>clang-format</code> is available in e.g. npm, or homebrew for Mac. This plugin also
+      has no configuration, please use the regular <code>.clang-format</code> mechanism.</p>
+    <br></br>
+    <p>This plugin is based on Martin Probst's ClangFormatIJ and fix some bugs. martin@probst.io http://www.probst.io.</p>
+    ]]>
+  </description>
+
+  <change-notes><![CDATA[
+    <ul>
+      <li><b>1.0.0</b> - Initial version based on ClangFormatIJ.</li>
+    </ul>
+    ]]>
+  </change-notes>
+
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable groupId="tools"
+      instance="wang.zhanwei.clangformat.plugin.ClangFormatConfigurable"/>
+  </extensions>
+
+  <actions>
+    <action id="ClangFormat.ClangFormat" class="wang.zhanwei.clangformat.plugin.ClangFormatAction"
+      text="Reformat Current Statement with clang-format"
+      description="Runs clang-format on the current statement or selection">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+
+      <keyboard-shortcut keymap="Mac OS X" first-keystroke="control alt K"/>
+      <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta alt K"/>
+      <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="meta alt K"/>
+    </action>
+    <action id="ClangFormat.ClangFormatFile"
+      class="wang.zhanwei.clangformat.plugin.ClangFormatFileAction"
+      text="Reformat File with clang-format"
+      description="Runs clang-format on the current file">
+    </action>
+    <action id="ClangFormat.ClangFormatAuto"
+      class="wang.zhanwei.clangformat.plugin.ClangFormatAutoAction"
+      text="Reformat Code with clang-format"
+      description="Runs clang-format on the current file or selection">
+      <add-to-group group-id="CodeFormatGroup" anchor="after" relative-to-action="ReformatCode"/>
+    </action>
+  </actions>
+</idea-plugin>
