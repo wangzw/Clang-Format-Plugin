@@ -2,7 +2,7 @@
   <id>wang.zhanwei.clangformat</id>
   <name>ClangFormat</name>
   <version>1.0.0</version>
-  <vendor email="me@zhanei.wang" url="https://github.com/wangzw/Clang-Format-Plugin">Zhanwei Wang</vendor>
+  <vendor email="wangzw@apache.org" url="https://github.com/wangzw/Clang-Format-Plugin">Zhanwei Wang</vendor>
 
   <description><![CDATA[
     <p>Runs <code>clang-format</code> on the statement or selection.</p>
