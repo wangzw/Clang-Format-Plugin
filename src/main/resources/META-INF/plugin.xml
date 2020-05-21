@@ -20,7 +20,7 @@
 
   <change-notes><![CDATA[
     <ul>
-      <li><b>1.0.1</b> - Compatible with 2020.1.</li>
+      <li><b>1.1.0</b> - Compatible with 2020.1.</li>
       <li><b>1.0.1</b> - Update sdk version.</li>
       <li><b>1.0.0</b> - Initial version based on ClangFormatIJ.</li>
     </ul>
