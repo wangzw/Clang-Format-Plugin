@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>wang.zhanwei.clangformat</id>
   <name>ClangFormat</name>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
   <vendor email="wangzw@apache.org" url="https://github.com/wangzw/Clang-Format-Plugin">Zhanwei Wang</vendor>
 
   <description><![CDATA[
@@ -20,6 +20,7 @@
 
   <change-notes><![CDATA[
     <ul>
+      <li><b>1.0.1</b> - Compatible with 2020.1.</li>
       <li><b>1.0.1</b> - Update sdk version.</li>
       <li><b>1.0.0</b> - Initial version based on ClangFormatIJ.</li>
     </ul>
