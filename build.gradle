@@ -21,7 +21,10 @@ dependencies {
 
 intellij {
     version '2021.3'
-    sameSinceUntilBuild true
+}
+
+patchPluginXml {
+    untilBuild '900.*'
 }
 
 publishPlugin {
